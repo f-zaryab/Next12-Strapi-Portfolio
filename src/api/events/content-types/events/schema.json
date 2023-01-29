@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events01",
+  "info": {
+    "singularName": "events",
+    "pluralName": "events01",
+    "displayName": "events",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "time": {
+      "type": "string"
+    },
+    "performers": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "events"
+    }
+  }
+}
